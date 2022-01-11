@@ -1,8 +1,10 @@
-const a = 5;
+let a = 5;
 const b = 2;
-const myName = "Seongjae"
+let myName = "Seongjae"
 
 console.log(a + b);
 console.log(a * b);
 console.log(a / b);
 console.log("hello " + myName);
+myName = "HanSeongJae";
+console.log("your name is " + myName);
