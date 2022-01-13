@@ -1,5 +1,14 @@
-const Title = document.querySelector("div h1");
-const Titles = document.querySelectorAll("div h1");
+const Title = document.querySelector("div.Hello h1");
 
-console.log(Title);
-console.log(Titles);
+let togle = false;
+
+function handleTitleClick() {
+    togle = !togle;
+    if(togle){
+        Title.style.color = "blue";
+    }else{
+        Title.style.color = "black";
+    }
+}
+
+Title.addEventListener("click", handleTitleClick);
