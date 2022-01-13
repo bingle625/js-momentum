@@ -1,44 +1,39 @@
-const Title = document.querySelector("div.Hello h1");
+// <⚠️ DONT DELETE THIS ⚠️>
+// import "./styles.css";
+// const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
+// <⚠️ /DONT DELETE THIS ⚠️>
 
-let togle = false;
+/*
+✅ The text of the title should change when the mouse is on top of it.
+✅ The text of the title should change when the mouse is leaves it.
+✅ When the window is resized the title should change.
+✅ On right click the title should also change.
+✅ The colors of the title should come from a color from the colors array.
+✅ DO NOT CHANGE .css, or .html files.
+✅ ALL function handlers should be INSIDE of "superEventHandler"
+*/
+const title = document.querySelector("h1");
+const superEventHandler = {
+  handleTitleEnter: function () {
+    title.innerText = "The mouse is here!";
+  },
 
-function handleTitleClick() {
-    togle = !togle;
-    if(togle){
-        Title.style.color = "blue";
-    }else{
-        Title.style.color = "black";
-    }
-}
+  handleTitleLeave: function () {
+    title.innerText = "The mouse is gone!";
+  },
 
-function handleTitleEnter() {
-    
-    Title.innerText = "The mouse is here!"
-}
+  handleResize: function () {
+    title.innerText = "You just resized";
+  },
 
-function handleTitleLeave() {
-    Title.innerText = "The mouse is gone!"
-    togle = !togle; 
-    if(togle){
-        Title.style.color = "blue";
-    }else{
-        Title.style.color = "black";
-    }
-}
+  handleRightClick: function () {
+    title.innerText = "That was a Right Clcik";
+  }
+};
 
-function handleResize() {
-    Title.innerText= "You just resized";
-    document.body.style.backgroundColor = "black";
-}
+title.addEventListener("mouseenter", superEventHandler.handleTitleEnter);
+title.addEventListener("mouseleave", superEventHandler.handleTitleLeave);
+window.addEventListener("resize", superEventHandler.handleResize);
+window.addEventListener("contextmenu", superEventHandler.handleRightClick);
 
-
-function handleRightClick() {
-    Title.innerText= "That was a Right Clcik";
-}
-
-console.log(window);
-Title.addEventListener("click", handleTitleClick);
-Title.addEventListener("mouseenter",handleTitleEnter);
-Title.addEventListener("mouseleave",handleTitleLeave);
-window.addEventListener('resize', handleResize);
-window.addEventListener('contextmenu', handleRightClick);
+console.log(title);
