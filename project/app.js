@@ -1,13 +1,17 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
-//or const loginButton = document.querySelecotr("#login-form button");
+const greeting = document.querySelector("#greeting");
 
+const HIDDEN_CLASSNAME = "hidden";
 
-function handleLoginBtnClick(){
-    const text = loginInput.value;
-    console.log(text);
-    console.log("click!");
+function onLoginSubmit(event){
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    // greeting.innerText = "Hello " + username; 아래와 같은 역할 수행함.
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME)
+
 }
 
-loginButton.addEventListener("click", handleLoginBtnClick);
+loginForm.addEventListener("submit", onLoginSubmit);
