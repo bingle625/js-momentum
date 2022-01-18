@@ -1,12 +1,7 @@
-.yello {
-  background-color: yellowgreen;
+#message2 {
+  font-weight: bold;
 }
-.purple {
-  background-color: blueviolet;
-}
-.blue {
-  background-color: blue;
-}
-h1 {
-  color: white;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
 }

@@ -7,8 +7,22 @@
     <link rel = "stylesheet" href = "style.css"/>    
     <title>Document</title>
 </head>
-<body class = "mediumScreen">
-    <h1>Hello!</h1>
+<body>
+    <h1>Random Number Game</h1>
+    <form id = "print-form">
+        <h2>
+            create a number between 0 and 
+            <input id = "range-input" type ="number" required min = "0"> 
+        </h2>
+        Guess the number: 
+        <input id ="user-input" type ="number" required min = "0"> 
+        <button>Play!</button>
+    </form>
+    <div id = "result">
+        <div id="message1"></div>
+        <div id="message2"></div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
